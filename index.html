@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #ffcccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #ffcccc;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Our Home</h1>
+    </header>
+    <main>
+        <p>Chào mừng đến với trang web của chúng tôi!</p>
+        <p>...</p>
+        <img src="love.jpg" alt="   ">
+        <p>...</p>
+        <h1>LuvDays</h1>
+        <div id="countdown"></div>
+
+        <script>
+            // Set the target date
+            const targetDate = new Date("2024-04-07").getTime();
+
+            // Update the countdown every 1 second
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = now - targetDate;
+
+                // Calculate days, hours, minutes, and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor(distance / (100 * 60 * 60 * 24 * 60));
+
+                // Display the countdown
+                document.getElementById("countdown").innerHTML = `Days: ${days}`;
+
+                // If the countdown is over, stop updating
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = "Countdown expired";
+                }
+            }, 1000);
+        </script>
+    </main>
+    <footer>
+        <p>From anh bé with love^^</p>
+    </footer>
+</body>
+
+</html>
